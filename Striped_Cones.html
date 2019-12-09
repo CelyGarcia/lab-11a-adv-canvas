@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+
+	<canvas id="sketch" width="600" height="600">
+	</canvas>
+
+	<script>
+		function draw() {
+			var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+
+			for (i = 1; i <= 41; i++) {
+				if (i % 2 == 0) {
+					context.fillStyle = "#FF3200"; // weird red even circles
+					context.beginPath();
+					context.arc((i * 10), (i * 10), (i * 4), 0, 2 * Math.PI, true);
+						// draw 1 circle for each iteration;
+						// proportional to i in both x and y dimensions
+						// make radius proportional to i as well
+						// context.arc(x, y, radius, start angle, end angle, clockwise);
+					context.closePath();
+					context.fill();
+				} else {
+					context.fillStyle = "#595855"; // grey odd circles
+					context.beginPath();
+					context.arc((i * 10), (i * 10), (i * 4), 0, 2 * Math.PI, true);
+						// draw 1 circle for each iteration;
+						// proportional to i in both x and y dimensions
+						// make radius proportional to i as well
+					context.closePath();
+					context.fill();
+				}
+			}
+	// https://docs.google.com/document/d/1yuVxsd5WChAF2Em4qx61Me0OCnUnrOeKlqacOtsmJao/pub
+		}
+	</script>
+
+</body>
+</html>
